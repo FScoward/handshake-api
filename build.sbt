@@ -44,4 +44,12 @@ libraryDependencies ++= Seq(
 
   "org.mockito" % "mockito-core" % "1.9.5" % "test",
   "org.scalatest" %% "scalatest" % "2.2.3" % "test",
-  "org.specs2" %% "specs2" % "2.3.12" % "test")
+  "org.specs2" %% "specs2" % "2.3.12" % "test",
+
+  "io.getquill" % "quill-async_2.11" % "0.6.0",
+  "com.zaxxer" % "HikariCP" % "2.4.3",
+  "com.typesafe" % "config" % "1.3.0"
+
+)
+
+//unmanagedClasspath in Compile += baseDirectory.value / "src" / "main" / "resources"

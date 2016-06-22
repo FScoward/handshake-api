@@ -4,6 +4,7 @@ import com.twitter.finagle.http.{Request, Response}
 import com.twitter.finatra.http.HttpServer
 import com.twitter.finatra.http.filters.{CommonFilters, LoggingMDCFilter, TraceIdMDCFilter}
 import com.twitter.finatra.http.routing.HttpRouter
+import controllers.GroupController
 
 object HelloWorldServerMain extends HelloWorldServer
 
@@ -24,5 +25,6 @@ class HelloWorldServer extends HttpServer {
       .filter[TraceIdMDCFilter[Request, Response]]
       .filter[CommonFilters]
       .add[HelloWorldController]
+      .add[GroupController]
   }
 }
