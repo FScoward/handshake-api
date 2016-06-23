@@ -1,8 +1,9 @@
 package repository
 
 import io.getquill._
-import io.getquill.naming.SnakeCase
-import models.Group
+import io.getquill.naming.{Literal, SnakeCase, UpperCase}
+import models.Groups
+
 import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
@@ -10,11 +11,11 @@ import scala.concurrent.ExecutionContext.Implicits.global
   */
 class GroupRepository {
 
-  lazy val db = source(new MysqlAsyncSourceConfig[SnakeCase]("db"))
+  lazy val db = source(new MysqlAsyncSourceConfig[Literal]("db"))
 
-  def save(group: Group) = {
+  def save(groups: Groups) = {
 
-    val q = quote(query[Group].insert)
-    db.run(q)(List(group))
+    val q = quote(query[Groups].insert)
+    db.run(q)(List(groups))
   }
 }

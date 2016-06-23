@@ -3,7 +3,7 @@ package controllers
 import javax.inject.Inject
 
 import com.twitter.finatra.http.Controller
-import models.{Group, GroupRequest}
+import models.{Groups, GroupRequest}
 import repository.GroupRepository
 import utils.Id64
 
@@ -16,8 +16,7 @@ class GroupController @Inject()(groupRepository: GroupRepository) extends Contro
     info("group")
     val id = Id64.nextAscId()
 
-
-    groupRepository.save(Group(id, request.name))
+    groupRepository.save(Groups(id, request.name))
   }
 
 }
