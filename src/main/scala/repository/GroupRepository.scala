@@ -1,7 +1,7 @@
 package repository
 
 import io.getquill._
-import io.getquill.naming.{Literal, SnakeCase, UpperCase}
+import io.getquill.naming.Literal
 import models.Groups
 
 import scala.concurrent.ExecutionContext.Implicits.global
