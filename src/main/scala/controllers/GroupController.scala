@@ -2,8 +2,9 @@ package controllers
 
 import javax.inject.Inject
 
+import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
-import models.{Groups, GroupRequest}
+import models.{GroupRequest, Groups}
 import repository.GroupRepository
 import utils.Id64
 
@@ -17,6 +18,13 @@ class GroupController @Inject()(groupRepository: GroupRepository) extends Contro
     val id = Id64.nextAscId()
 
     groupRepository.save(Groups(id, request.name))
+  }
+
+  get("/group") { request: Request =>
+
+    val list = groupRepository.list()
+
+    list
   }
 
 }
