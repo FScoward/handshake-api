@@ -48,8 +48,19 @@ libraryDependencies ++= Seq(
 
   "io.getquill" % "quill-async_2.11" % "0.6.0",
   "com.zaxxer" % "HikariCP" % "2.4.3",
-  "com.typesafe" % "config" % "1.3.0"
+  "com.typesafe" % "config" % "1.3.0",
+
+  "mysql" % "mysql-connector-java" % "5.1.20"
 
 )
 
 //unmanagedClasspath in Compile += baseDirectory.value / "src" / "main" / "resources"
+
+//flywayDriver := "com.mysql.jdbc.Driver"
+
+flywayUrl := "jdbc:mysql://192.168.99.100:32776/handshake?characterEncoding=UTF8"
+
+flywayUser := "root"
+
+flywayPassword := "topsecret"
+

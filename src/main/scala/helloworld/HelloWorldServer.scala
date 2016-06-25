@@ -5,6 +5,7 @@ import com.twitter.finatra.http.HttpServer
 import com.twitter.finatra.http.filters.{CommonFilters, LoggingMDCFilter, TraceIdMDCFilter}
 import com.twitter.finatra.http.routing.HttpRouter
 import controllers.GroupController
+import modules.QuillDatabaseModule
 
 object HelloWorldServerMain extends HelloWorldServer
 
@@ -18,6 +19,8 @@ class HelloWorldServer extends HttpServer {
 
   override val defaultFinatraHttpPort = ":9000"
   override val defaultHttpPort = 9001
+
+  override def modules = Seq(QuillDatabaseModule)
 
   override def configureHttp(router: HttpRouter) {
     router
