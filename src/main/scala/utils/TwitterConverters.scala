@@ -1,14 +1,13 @@
 package utils
 
-import com.twitter.{util => twitter}
-import scala.concurrent.{ExecutionContext, Promise, Future}
-import scala.util.{Failure, Success, Try}
+import com.twitter.{ util => twitter }
+import scala.concurrent.{ ExecutionContext, Promise, Future }
+import scala.util.{ Failure, Success, Try }
 import language.implicitConversions
 
-
 /**
-  * http://stackoverflow.com/questions/30317473/convert-scala-future-to-twitter-future
-  * */
+ * http://stackoverflow.com/questions/30317473/convert-scala-future-to-twitter-future
+ */
 object TwitterConverters {
   implicit def scalaToTwitterTry[T](t: Try[T]): twitter.Try[T] = t match {
     case Success(r) => twitter.Return(r)

@@ -50,7 +50,9 @@ libraryDependencies ++= Seq(
   "com.zaxxer" % "HikariCP" % "2.4.3",
   "com.typesafe" % "config" % "1.3.0",
 
-  "mysql" % "mysql-connector-java" % "5.1.20"
+  "mysql" % "mysql-connector-java" % "5.1.20",
+
+  "org.twitter4j" % "twitter4j-core" % "4.0.4"
 
 )
 

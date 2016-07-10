@@ -1,10 +1,10 @@
 package helloworld
 
-import com.twitter.finagle.http.{Request, Response}
+import com.twitter.finagle.http.{ Request, Response }
 import com.twitter.finatra.http.HttpServer
-import com.twitter.finatra.http.filters.{CommonFilters, LoggingMDCFilter, TraceIdMDCFilter}
+import com.twitter.finatra.http.filters.{ CommonFilters, LoggingMDCFilter, TraceIdMDCFilter }
 import com.twitter.finatra.http.routing.HttpRouter
-import controllers.GroupController
+import controllers.{ GroupController, OAuth2Controller }
 import modules.QuillDatabaseModule
 
 object HelloWorldServerMain extends HelloWorldServer
@@ -29,5 +29,6 @@ class HelloWorldServer extends HttpServer {
       .filter[CommonFilters]
       .add[HelloWorldController]
       .add[GroupController]
+      .add[OAuth2Controller]
   }
 }
