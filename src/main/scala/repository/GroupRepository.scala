@@ -1,20 +1,20 @@
 package repository
 
-import javax.inject.{Inject, Singleton}
+import javax.inject.{ Inject, Singleton }
 
 import io.getquill._
 import models.Groups
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import com.twitter.util.{Future => TwitterFuture}
+import com.twitter.util.{ Future => TwitterFuture }
 import modules.QuillDatabaseModule.QuillDatabaseSource
 import utils.TwitterConverters._
 
 /**
-  * Created by Fumiyasu on 2016/06/22.
-  */
+ * Created by Fumiyasu on 2016/06/22.
+ */
 @Singleton
-class GroupRepository @Inject()(db: QuillDatabaseSource) {
+class GroupRepository @Inject() (db: QuillDatabaseSource) {
 
   def save(groups: Groups) = {
     val q = quote(query[Groups].insert)

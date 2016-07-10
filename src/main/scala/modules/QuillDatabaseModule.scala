@@ -6,11 +6,11 @@ import com.twitter.inject.TwitterModule
 import io.getquill.naming.Literal
 import io.getquill.sources.async.MysqlAsyncSource
 import io.getquill.sources.sql.idiom.MySQLDialect
-import com.google.inject.{Provides, Singleton}
+import com.google.inject.{ Provides, Singleton }
 
 /**
-  * Created by Fumiyasu on 2016/06/25.
-  */
+ * Created by Fumiyasu on 2016/06/25.
+ */
 object QuillDatabaseModule extends TwitterModule {
   type QuillDatabaseSource = MysqlAsyncSource[MySQLDialect, Literal, MySQLConnection]
 
