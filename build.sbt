@@ -52,7 +52,11 @@ libraryDependencies ++= Seq(
 
   "mysql" % "mysql-connector-java" % "5.1.20",
 
-  "org.twitter4j" % "twitter4j-core" % "4.0.4"
+  "org.twitter4j" % "twitter4j-core" % "4.0.4",
+
+  "com.github.cb372" %% "scalacache-memcached" % "0.9.1",
+  "com.github.cb372" %% "scalacache-ehcache" % "0.9.1"
+
 
 )
 
